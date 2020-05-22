@@ -1,0 +1,84 @@
+<snippet>
+	<content><![CDATA[
+//codeRed98
+//@Shashank Keshav
+//I want to listen to music lying on a riverbank and watch the auroras dance in the night sky
+
+//<------------------------------------------template------------------------------------------>
+
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace std;
+using namespace __gnu_pbds;
+#define ll long long int
+#define ld long double
+#define inf LLONG_MAX
+#define minf LLONG_MIN
+#define pb push_back
+#define mp make_pair
+#define in insert
+#define F first
+#define S second
+#define ub upper_bound
+#define lb lower_bound
+#define acc accumulate
+#define bin binary_search
+#define vmin *min_element
+#define vmax *max_element
+#define all(v) v.begin(), v.end()
+#define clr(v) memset(v, 0, sizeof(v))
+#define max_pq priority_queue<ll, vector<ll>>
+#define min_pq priority_queue<ll, vector<ll>, greater<ll>>
+#define qll queue<ll>
+#define vll vector<ll>
+#define vpll vector<pair<ll, ll>>
+#define vvll vector<vector<ll>>
+#define mll map<ll, ll>
+#define umll unordered_map<ll, ll>
+#define sll set<ll>
+#define pll pair<ll, ll>
+#define setbits(x) __builtin_popcountll(x)
+#define zrobits(x) __builtin_ctzll(x)
+#define precision(x, y) fixed << setprecision(y) << x
+#define revsort(v) sort(all(v), greater<ll>())
+#define shufflev(v) shuffle(all(v), rng)
+#define shufflea(a, n) shuffle(a, a + n, rng)
+#define iter(it, a) for (auto it = a.begin(); it != a.end(); it++)
+#define fo(i, a, b) for (ll i = a; i < b; i++)
+#define refo(i, a, b) for (ll i = a; i >= b; i--)
+#define arrin(arr, start, n)       \
+    for (ll A = start; A < n; A++) \
+    cin >> arr[A]
+#define print(arr, a, b)       \
+    for (ll B = a; B < b; B++) \
+        cout << arr[B] << " "; \
+    cout << endl
+#define println(arr, a, b)     \
+    for (ll C = a; C < b; C++) \
+    cout << arr[C] << endl
+#define PI 3.1415926535897932384626
+const ll mod = 1000000007;
+const ll pmod = 998244353;
+const ll maxN = 2000001;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> pbds;
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+#define trace1(x) cerr << #x << ": " << x << endl
+#define trace2(x, y) cerr << #x << ": " << x << " | " << #y << ": " << y << endl
+#define trace3(x, y, z) cerr << #x << ": " << x << " | " << #y << ": " << y << " | " << #z << ": " << z << endl
+#define trace4(a, b, c, d) cerr << #a << ": " << a << " | " << #b << ": " << b << " | " << #c << ": " << c << " | " << #d << ": " << d << endl
+#define trace5(a, b, c, d, e) cerr << #a << ": " << a << " | " << #b << ": " << b << " | " << #c << ": " << c << " | " << #d << ": " << d << " | " << #e << ": " << e << endl
+#define trace6(a, b, c, d, e, f) cerr << #a << ": " << a << " | " << #b << ": " << b << " | " << #c << ": " << c << " | " << #d << ": " << d << " | " << #e << ": " << e << " | " << #f << ": " << f << endl
+
+//<------------------------------------------code------------------------------------------>
+
+void cR()
+{
+	${1:}   
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>myc++</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+ll spf[maxN]; 
+
+void sieve() 
+{ 
+    spf[1] = 1; 
+    for (ll i=2; i<maxN; i++) 
+        spf[i] = i; 
+
+    for (ll i=4; i<maxN; i+=2) 
+        spf[i] = 2; 
+
+    for (ll i=3; i*i<maxN; i++) 
+    { 
+        if (spf[i] == i) 
+        { 
+            for (ll j=i*i; j<maxN; j+=i) 
+                if (spf[j]==j) 
+                    spf[j] = i; 
+        } 
+    } 
+} 
+  
+vll getfactors(ll x) 
+{ 
+    vll ret; 
+    while (x != 1) 
+    { 
+        ret.pb(spf[x]); 
+        x = x / spf[x]; 
+    } 
+    return ret; 
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>primefactornloglogn</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

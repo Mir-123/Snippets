@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+ll nCr[101][101];
+void combination(ll p)
+{
+    fo(i,1,101)
+    {
+        nCr[i][0] = 1;nCr[i][i] = 1;
+        refo(j,i-1,1)
+        {
+            nCr[j] = (nCr[j] + nCr[j - 1]) % p; 
+        }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>nCr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,68 @@
+<snippet>
+	<content><![CDATA[
+//<------------------------------------------segment tree------------------------------------------>
+
+ll tree[4 * N];
+ll arr[N];
+
+void build_tree(ll start, ll enda, ll treenode)
+{
+    if (start == enda)
+    {
+        tree[treenode] = arr[start];
+        return;
+    }
+    ll mid = (start + enda) / 2;
+    build_tree(start, mid, 2 * treenode);
+    build_tree(mid + 1, enda, 2 * treenode + 1);
+    tree[treenode] = (tree[2 * treenode] + tree[2 * treenode + 1]);
+}
+
+ll query(ll start, ll enda, ll treenode, ll qs, ll qe)
+{
+    if (qs > enda || qe < start)
+        return 0;
+    if (start >= qs && enda <= qe)
+        return tree[treenode];
+    ll mid = (start + enda) / 2;
+    ll leftchild = query(start, mid, 2 * treenode, qs, qe);
+    ll rightchild = query(mid + 1, enda, 2 * treenode + 1, qs, qe);
+    return (leftchild + rightchild);
+}
+
+void update_node(ll start, ll enda, ll treenode, ll indx, ll value)
+{
+    if (indx > enda || indx < start)
+        return;
+    if (start == enda && start == indx)
+    {
+        tree[treenode] = value;
+        arr[indx] = value;
+        return;
+    }
+    ll mid = (start + enda) / 2;
+    update_node(start, mid, 2 * treenode, indx, value);
+    update_node(mid + 1, enda, 2 * treenode + 1, indx, value);
+    tree[treenode] = (tree[2 * treenode] + tree[2 * treenode + 1]);
+}
+
+void update_range(ll start, ll enda, ll treenode, ll l, ll r, ll value)
+{
+    if (l > enda || r < start)
+        return;
+    if (start >= l && enda <= r)
+    {
+        tree[treenode] = (enda - start + 1) * value;
+        return;
+    }
+    ll mid = (start + enda) / 2;
+    update_range(start, mid, 2 * treenode, l, r, value);
+    update_range(mid + 1, enda, 2 * treenode + 1, l, r, value);
+    tree[treenode] = (tree[2 * treenode] + tree[2 * treenode + 1]);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>segtree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

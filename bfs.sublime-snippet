@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+ll root=${1:};
+ll level[maxN],parent[maxN];
+memset(level, 0, sizeof(level));
+queue<ll>Q;
+Q.push(root);
+level[root]=1;
+parent[maxN]=-1;
+while(!Q.empty())
+{
+    ll curr=Q.front();
+    Q.pop();
+    for(auto i:grph[curr])
+    {
+        if(level[i])
+            continue;
+        level[i]=level[indx]+1;
+        parent[i]=indx;
+        Q.push(i);
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bfs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

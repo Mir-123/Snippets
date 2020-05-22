@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+string substring(string strng,ll l,ll r)
+{
+    string ret="";
+    fo(i,l,r)
+    {
+        ret+=strng[i];
+    }
+    return ret;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>substring</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

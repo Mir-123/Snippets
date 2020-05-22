@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+bool prime[maxN];
+void sieve()
+{
+    memset(prime, true, sizeof(prime));
+    for (ll p=2; p*p<=maxN; p++) 
+    { 
+        if (prime[p] == true) 
+        { 
+            for (ll i=p*p; i<=maxN; i += p) 
+                prime[i] = false; 
+        } 
+    } 
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sieveofeth</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

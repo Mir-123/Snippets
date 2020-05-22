@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+ll level[maxN];
+void dfs(ll indx,ll par)
+{
+    for(auto i:grph[indx].size())
+    {
+        if(par==i)
+            continue;
+        level[i]=level[indx]+1;
+        dfs(i);
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dfstree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
